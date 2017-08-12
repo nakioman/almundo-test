@@ -1,0 +1,21 @@
+{
+  "name": "almundo.com front end sample",
+  "description": "almundo.com front end sample interview exam",
+  "repository": "https://github.com/nakioman/almundo-test",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "node",
+    "express",
+    "static",
+    "angular2",
+    "mongoose",
+    "odata",
+    "mongodb"
+  ],
+  "addons": [
+    "mongolab:sandbox"
+  ],
+  "env": {
+    "NPM_CONFIG_PRODUCTION": "false"
+  }
+}
