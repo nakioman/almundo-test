@@ -9,8 +9,8 @@
   </div>
   <div class="pagination">
     <ul class="pagination text-center" role="navigation" aria-label="Paginación">
-      <li class="pagination-previous"><button [ngClass]="{'disabled': filters.skip==0}" (click)="goToPreviousPage()" aria-label="Página anterior">Anterior</button></li>
-      <li class="pagination-next" ><button [ngClass]="{'disabled': hotels.count<10}" (click)="goToNextPage()" aria-label="Próxima página">Siguiente</button></li>
+      <li class="pagination-previous"><button [disabled]="filters.skip==0" [ngClass]="{'disabled': filters.skip==0}" (click)="goToPreviousPage()" aria-label="Página anterior">Anterior</button></li>
+      <li class="pagination-next" ><button [disabled]="hotels.count<10" [ngClass]="{'disabled': hotels.count<10}" (click)="goToNextPage()" aria-label="Próxima página">Siguiente</button></li>
     </ul>
   </div>
 </div>
