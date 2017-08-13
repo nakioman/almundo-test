@@ -1,0 +1,19 @@
+
+.hotel-list {
+  padding: 0.5rem 1.5rem;
+}
+
+.hotel-list .hotel-list-header {
+  border-bottom: 0.0625rem solid #e6e6e6;
+}
+
+.hotel-list .hotel-list-header .title {
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  /* font-weight: bold; */
+}
+
+.hotel-list .pagination {
+  margin: .7rem 0;
+}
+

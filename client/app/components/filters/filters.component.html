@@ -1,0 +1,54 @@
+<div class="product-filters">
+  <h2 class="product-filters-header" data-responsive-toggle="filters-menu" data-hide-for="medium">
+    <i class="fi-list" data-toggle></i> Filtros
+  </h2>
+  <h1 class="product-filters-header hide-for-small-only">Filtros</h1>
+  <ul class="vertical menu" id="filters-menu" data-accordion-menu data-hide-for="medium">
+    <li class="product-filters-tab">
+      <a href="#">Filtrar por nombre</a>
+      <ul class="categories-menu menu vertical nested is-active">
+        <li>
+          <div class="input-group">
+            <input class="input-group-field" type="text" placeholder="nombre del hotel">
+            <div class="input-group-button">
+              <input type="submit" class="button" value="Filtrar">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="product-filters-tab">
+      <a href="#">Precio</a>
+      <ul class="categories-menu menu vertical nested is-active">
+        <li>
+          <div class="grid-x">
+            <div class="small-2 columns">
+              <input type="number" id="sliderPriceStart" class="text-center">
+            </div>
+            <div class="small-8 columns">
+              <div class="slider" data-slider data-initial-start="25" data-initial-end="75">
+                <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderPriceStart"></span>
+                <span class="slider-fill" data-slider-fill></span>
+                <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderPriceEnd"></span>
+              </div>
+            </div>
+            <div class="small-2 columns">
+              <input type="number" id="sliderPriceEnd" class="text-center">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="product-filters-tab">
+      <a href="#">Estrellas</a>
+      <ul class="categories-menu menu vertical nested is-active">
+        <li><input id="all-stars" type="checkbox"><label for="all-stars">Todas</label></li>
+        <li><input aria-label="Cinco estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Cuatro estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Tres estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Dos estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Una estrella" type="checkbox"><label><i class="fi-star"></i></label></li>
+      </ul>
+    </li>
+  </ul>
+</div>
