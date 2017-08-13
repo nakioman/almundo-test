@@ -44,6 +44,7 @@
 
 .hotel-section .hotel .hotel-name .hotel-rating {
   color: #FFD700;
+  display: inline;
 }
 
 .hotel-section .book-hotel {

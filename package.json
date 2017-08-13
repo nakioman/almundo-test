@@ -15,7 +15,7 @@
     "client": "ng serve",
     "start": "node dist/server/app.js",
     "heroku-postbuild": "npm run build:prod",
-    "dev": "concurrently \"gulp\" \"ng serve -pc proxy.conf.json --open\""
+    "dev": "concurrently \"gulp\" \"ng serve --proxy-config proxy.conf.json --open\""
   },
   "private": true,
   "dependencies": {
@@ -37,7 +37,7 @@
     "mongoose": "^4.11.6",
     "mongoose-seeder": "^1.2.1",
     "odata-resource": "^0.2.2",
-    "rxjs": "^5.4.2",
+    "rxjs": "^5.4.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

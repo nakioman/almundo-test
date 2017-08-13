@@ -9,9 +9,9 @@
       <ul class="categories-menu menu vertical nested is-active">
         <li>
           <div class="input-group">
-            <input class="input-group-field" type="text" placeholder="nombre del hotel">
+            <input class="input-group-field" #name type="text" placeholder="nombre del hotel">
             <div class="input-group-button">
-              <input type="submit" class="button" value="Filtrar">
+              <input type="button" class="button" value="Filtrar" (click)="filterName(name.value)">
             </div>
           </div>
         </li>
@@ -22,18 +22,21 @@
       <ul class="categories-menu menu vertical nested is-active">
         <li>
           <div class="grid-x">
-            <div class="small-2 columns">
-              <input type="number" id="sliderPriceStart" class="text-center">
+            <div class="small-3 columns">
+              <input type="number" id="sliderPriceStart" #sliderPriceStart class="text-center" (change)="filterPrices(sliderPriceStart.value, sliderPriceEnd.value)">
             </div>
-            <div class="small-8 columns">
-              <div class="slider" data-slider data-initial-start="25" data-initial-end="75">
-                <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderPriceStart"></span>
+            <div class="small-6 columns">
+              <div class="slider" data-slider data-initial-start="0" data-initial-end="5000" data-end="5000">
+                <span class="slider-handle from" data-slider-handle role="slider"
+                tabindex="1"
+                (change)="filterPrices(sliderPriceStart.value, sliderPriceEnd.value)"
+                 aria-controls="sliderPriceStart"></span>
                 <span class="slider-fill" data-slider-fill></span>
-                <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderPriceEnd"></span>
+                <span class="slider-handle to" data-slider-handle role="slider" tabindex="1" aria-controls="sliderPriceEnd"></span>
               </div>
             </div>
-            <div class="small-2 columns">
-              <input type="number" id="sliderPriceEnd" class="text-center">
+            <div class="small-3 columns">
+              <input type="number" id="sliderPriceEnd" class="text-center" #sliderPriceEnd (change)="filterPrices(sliderPriceStart.value, sliderPriceEnd.value)">
             </div>
           </div>
         </li>
@@ -42,12 +45,12 @@
     <li class="product-filters-tab">
       <a href="#">Estrellas</a>
       <ul class="categories-menu menu vertical nested is-active">
-        <li><input id="all-stars" type="checkbox"><label for="all-stars">Todas</label></li>
-        <li><input aria-label="Cinco estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
-        <li><input aria-label="Cuatro estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
-        <li><input aria-label="Tres estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
-        <li><input aria-label="Dos estrellas" type="checkbox"><label><i class="fi-star"></i><i class="fi-star"></i></label></li>
-        <li><input aria-label="Una estrella" type="checkbox"><label><i class="fi-star"></i></label></li>
+        <li><input id="all-stars" type="checkbox" [checked]="allStarsSelected" (click)="selectAllStars($event.target.checked)"><label for="all-stars">Todas</label></li>
+        <li><input aria-label="Cinco estrellas" [checked]="isStarChecked(5)" type="checkbox" (click)="selectStar(5, $event.target.checked)"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Cuatro estrellas" [checked]="isStarChecked(4)" type="checkbox" (click)="selectStar(4, $event.target.checked)"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Tres estrellas" [checked]="isStarChecked(3)" type="checkbox" (click)="selectStar(3, $event.target.checked)"><label><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Dos estrellas" [checked]="isStarChecked(2)" type="checkbox" (click)="selectStar(2, $event.target.checked)"><label><i class="fi-star"></i><i class="fi-star"></i></label></li>
+        <li><input aria-label="Una estrella" [checked]="isStarChecked(1)" type="checkbox" (click)="selectStar(1, $event.target.checked)"><label><i class="fi-star"></i></label></li>
       </ul>
     </li>
   </ul>

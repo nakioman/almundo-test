@@ -1,26 +1,28 @@
 <div class="grid-x hotel-section">
-    <div class="small-8 medium-9 columns hotel">
-      <div class="hotel-avatar">
-        <img class="avatar-image" src="//images.almundo.com/201/1000000/880000/877200/877178/877178_27_b.jpg" alt="Citadines Kurfürstendamm Berlin">
-      </div>
-      <div class="hotel-name">
-        <p class="name">
-            Citadines Kurfürstendamm Berlin
-        </p>
-        <p class="hotel-rating">
-          <i class="fi-star"></i>
-        </p>
-        <p class="hotel-price">
-          $ 1797.89
-        </p>
-      </div>
+  <div class="small-8 medium-9 columns hotel">
+    <div class="hotel-avatar">
+      <img class="avatar-image" [src]="hotel.image" [alt]="hotel.name">
     </div>
-    <div class="small-4 medium-3 columns book-hotel">
-      <div class="book-hotel-action">
-        <button class="button primary small">
+    <div class="hotel-name">
+      <p class="name">
+        {{hotel.name}}
+      </p>
+      <span class="hotel-rating">
+        <div *ngFor="let item of createRange()" class="hotel-rating">
+          <i class="fi-star"></i>
+        </div>
+      </span>
+      <p class="hotel-price">
+        $ {{hotel.price}}
+      </p>
+    </div>
+  </div>
+  <div class="small-4 medium-3 columns book-hotel">
+    <div class="book-hotel-action">
+      <button class="button primary small">
               <i class="fi-bookmark" aria-hidden="true"></i>
               Book hotel
             </button>
-      </div>
     </div>
   </div>
+</div>

@@ -1,7 +1,8 @@
 # AlmundoTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
-The backend is made from scratch using [Mongoose.js](), [Express.js]() and [Odata-Resource]()
+The backend is made from scratch using [Mongoose.js](http://mongoosejs.com/), [Express.js](http://expressjs.com/) and [Odata-Resource](https://github.com/adamspe/odata-resource)
+The frontend layout was done using [Foundation 6](http://foundation.zurb.com/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

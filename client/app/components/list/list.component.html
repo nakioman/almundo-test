@@ -4,18 +4,13 @@
       Hoteles
     </h6>
   </div>
-  <app-row></app-row>
+  <div *ngFor="let hotel of hotels.results">
+    <app-row [hotel]="hotel"></app-row>
+  </div>
   <div class="pagination">
     <ul class="pagination text-center" role="navigation" aria-label="Paginación">
-      <li class="pagination-previous disabled">Anterior</li>
-      <li class="current"><span class="show-for-sr">Estás en la página</span> 1</li>
-      <li><a href="#" aria-label="Page 2">2</a></li>
-      <li><a href="#" aria-label="Page 3">3</a></li>
-      <li><a href="#" aria-label="Page 4">4</a></li>
-      <li class="ellipsis"></li>
-      <li><a href="#" aria-label="Page 12">12</a></li>
-      <li><a href="#" aria-label="Page 13">13</a></li>
-      <li class="pagination-next"><a href="#" aria-label="Próxima página">Siguiente</a></li>
+      <li class="pagination-previous"><button [ngClass]="{'disabled': filters.skip==0}" (click)="goToPreviousPage()" aria-label="Página anterior">Anterior</button></li>
+      <li class="pagination-next" ><button [ngClass]="{'disabled': hotels.count<10}" (click)="goToNextPage()" aria-label="Próxima página">Siguiente</button></li>
     </ul>
   </div>
 </div>
