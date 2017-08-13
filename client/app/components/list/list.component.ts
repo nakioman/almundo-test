@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { HotelService } from '../../services/hotel.service';
@@ -9,7 +9,7 @@ import { IHotelResults, IHotelFilters } from '../../models/hotel.model';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements AfterViewInit {
+export class ListComponent {
   public hotels: IHotelResults;
   public filters: IHotelFilters;
 
@@ -49,9 +49,5 @@ export class ListComponent implements AfterViewInit {
         top: this.filters.top
       }
     });
-  }
-
-  ngAfterViewInit() {
-    $(document).foundation();
   }
 }

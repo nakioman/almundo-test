@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IHotel } from '../../models/hotel.model';
 
@@ -7,12 +7,8 @@ import { IHotel } from '../../models/hotel.model';
   templateUrl: './row.component.html',
   styleUrls: ['./row.component.css']
 })
-export class RowComponent implements AfterViewInit {
+export class RowComponent {
   @Input() public hotel: IHotel;
-
-  ngAfterViewInit() {
-    $(document).foundation();
-  }
 
   public createRange() {
     const items: number[] = [];
