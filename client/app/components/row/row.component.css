@@ -48,15 +48,8 @@
 }
 
 .hotel-section .book-hotel {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center !important;
 }
 
 @media screen and (max-width: 39.9375em) {
