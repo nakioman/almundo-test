@@ -10,7 +10,7 @@ import { IHotelResults, IHotelFilters } from '../../models/hotel.model';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements AfterViewInit {
-  public hotels: IHotelResults = { count: 0, results: [] };
+  public hotels: IHotelResults;
   public filters: IHotelFilters;
 
   constructor(private hotelService: HotelService, private route: ActivatedRoute, private router: Router) {
@@ -19,6 +19,7 @@ export class ListComponent implements AfterViewInit {
 
   private search(filters: IHotelFilters) {
     this.filters = filters;
+    this.hotels = null;
     this.hotelService.getHotels(filters).then(hotels => this.hotels = hotels);
   }
 
