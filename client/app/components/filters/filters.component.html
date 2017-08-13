@@ -9,9 +9,9 @@
       <ul class="categories-menu menu vertical nested is-active">
         <li>
           <div class="input-group">
-            <input class="input-group-field" #name type="text" placeholder="nombre del hotel">
+            <input class="input-group-field" #name type="text" placeholder="nombre del hotel" (keyup.enter)="filterName(name.value)" >
             <div class="input-group-button">
-              <input type="button" class="button" value="Filtrar" (click)="filterName(name.value)">
+              <input type="submit" class="button" value="Filtrar" (click)="filterName(name.value)">
             </div>
           </div>
         </li>

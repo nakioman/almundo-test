@@ -16,6 +16,10 @@ const hotelSchema = Schema({
   image: {
     type: String,
     required: true,
+  },
+  nameFilter: {
+    type: String,
+    required: true,
   }
 });
 

@@ -13,6 +13,7 @@ data.hotels.forEach(item => {
     stars: item.stars,
     price: item.price.amount,
     image: item.image,
+    nameFilter: item.name.toLowerCase(),
   };
 });
 

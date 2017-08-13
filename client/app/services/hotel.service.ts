@@ -62,7 +62,7 @@ class QueryData {
   }
 
   public containsName(name: string) {
-    this.filter = `${this.filter}${this.hasFilters() ? ' and ' : ''}contains(name, '${name}')`;
+    this.filter = `${this.filter}${this.hasFilters() ? ' and ' : ''}contains(nameFilter, '${name.toLowerCase()}')`;
     return this;
   }
 
