@@ -20,14 +20,17 @@ export class HotelService {
 
   public getHotels(filters: IHotelFilters): Promise<IHotelResults> {
     return new Promise<IHotelResults>((resolve, reject) => {
-      const hotels = this.query().skipRows(filters.skip).takeRows(filters.top);
+      const hotels = this.query();
+      if (filters.skip && filters.top) {
+        hotels.skipRows(filters.skip).takeRows(filters.top);
+      }
       if (filters.name) {
         hotels.containsName(filters.name);
       }
       if (filters.priceFrom && filters.priceTo) {
         hotels.priceRange(filters.priceFrom, filters.priceTo);
       }
-      if (filters.stars) {
+      if (filters.stars && filters.stars.length > 0) {
         hotels.hasStars(filters.stars);
       }
       Promise.all([hotels.exec(), hotels.execCount()]).then(values => {
