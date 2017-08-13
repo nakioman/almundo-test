@@ -1,6 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import $ from 'jquery';
-import 'foundation-sites';
 
 @Component({
   selector: 'app-filters',

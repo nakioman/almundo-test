@@ -14,7 +14,7 @@
     "server": "gulp",
     "client": "ng serve",
     "start": "node dist/server/app.js",
-    "heroku-postbuild": "concurrently \"gulp build --prod\" \"ng build --prod\"",
+    "heroku-postbuild": "npm run build:prod",
     "dev": "concurrently \"gulp\" \"ng serve -pc proxy.conf.json --open\""
   },
   "private": true,
